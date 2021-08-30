@@ -1,0 +1,44 @@
+import random
+import os
+
+def Fuck_Sys():
+    attempt = 0
+    bingo = 0
+    # budget = int(input('Budget : '))
+    budget = 100
+
+    premiere_cote = 1.9 #Normalement c'est 1.47 mais c'est possible en 1.9
+    deuxieme_cote = 2.48
+
+    while bingo == 0:
+
+        first_random = random.randrange(0,budget)
+
+        budget_restant = budget - first_random
+
+        second_random = budget_restant
+
+        # Il faut ici faire comprendre qu'il n'est pas possible de gagner au deux parie
+        # (Essayer de placer un OR ou AND avec un truc du genre)
+
+        if (premiere_cote * first_random) > budget and (deuxieme_cote * second_random) > budget:
+            print('TROUVER :)')
+            print('first_random : ',first_random  ,  '// ', 'second_random : ',second_random)
+
+            print('1er gain : ',premiere_cote * first_random)
+            print('2nd gain : ',deuxieme_cote * second_random)
+            bingo += 1
+            print('Nombre de tentatives : ' , attempt)
+            os.system("pause")
+        else:
+            print('FAILED')
+            attempt += 1
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    Fuck_Sys()

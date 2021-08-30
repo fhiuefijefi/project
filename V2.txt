@@ -1,0 +1,52 @@
+import random
+import os
+
+def Fuck_Sys():
+    attempt = 0
+    bingo = 0
+    # budget = int(input('Budget : '))
+    budget = 100
+
+    premiere_cote = 1.3 # 1er GAGNANT
+    deuxieme_cote = 8 # Matche NUL
+    troisieme_cote = 41 #2eme GAGNANT
+
+    while bingo == 0:
+
+        first_random = random.randrange(0,budget)
+
+        budget_reduit = budget - first_random
+
+        second_random = random.randrange(0,budget_reduit)
+
+        budget_restant = budget_reduit - second_random
+
+        third_random = budget_restant
+
+
+
+        # Il faut ici faire comprendre qu'il n'est pas possible de gagner au deux parie
+        # (Essayer de placer un OR ou AND avec un truc du genre)
+
+        if (premiere_cote * first_random) > budget and (deuxieme_cote * second_random) > budget and (troisieme_cote * third_random) > budget:
+            print('TROUVER :)')
+            print('1er GAGNANT : ',first_random  ,  '€ // ', 'Match NUL : ',second_random , '€ // ', '2ème GAGNANT : ',third_random, '€')
+
+            print('Si 1er GAGNANT : ',premiere_cote * first_random)
+            print('Si NUL : ',deuxieme_cote * second_random)
+            print('Si 3ème gagnant : ', troisieme_cote * third_random)
+            bingo += 1
+            print('Nombre de tentatives : ' , attempt)
+            os.system("pause")
+        else:
+            print('FAILED')
+            attempt += 1
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    Fuck_Sys()

@@ -1,0 +1,19 @@
+from pynput.keyboard import Controller, Key
+
+from time import sleep
+
+sleep(3)
+
+keyboard = Controller()
+
+word = ('S','a','l','u','t',' ','a',' ', 't','o','i')
+
+for i in word:
+    keyboard.press(i)
+    keyboard.release(i)
+    sleep(0.1)
+
+
+
+if __name__ == '__main__':
+    pass

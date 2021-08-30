@@ -1,0 +1,53 @@
+from pynput.mouse import Controller, Button
+from time import sleep
+
+sleep(2)
+
+mouse = Controller()
+
+#print(mouse.position)
+
+# Accès extention :
+
+mouse.position = (1166, 48)
+mouse.press(Button.left)
+mouse.release(Button.left)
+sleep(1.5)
+
+#Changement de réseau :
+
+mouse.position = (996, 102)
+mouse.press(Button.left)
+mouse.release(Button.left)
+sleep(0.1)
+
+# Selection Reseau Principale :
+
+mouse.position = (1017, 260)
+mouse.press(Button.left)
+mouse.release(Button.left)
+sleep(0.1)
+
+# Cliquer sur le bouton "Envoyé" :
+
+mouse.position = (1002, 365)
+mouse.press(Button.left)
+mouse.release(Button.left)
+sleep(0.5)
+
+# CLiquer sur le wallet destinataire :
+
+mouse.position = (927, 307)
+mouse.press(Button.left)
+mouse.release(Button.left)
+sleep(0.1)
+
+# Cliquer sur "MAX" :
+
+mouse.position = (866, 390)
+mouse.press(Button.left)
+mouse.release(Button.left)
+sleep(0.1)
+
+if __name__ == '__main__':
+    pass

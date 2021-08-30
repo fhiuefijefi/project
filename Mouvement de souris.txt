@@ -1,0 +1,19 @@
+from pynput.mouse import Controller, Button
+from time import sleep
+
+sleep(2)
+
+mouse = Controller()
+
+#print(mouse.position)
+
+mouse.position = (1052, 16)
+mouse.press(Button.left)
+sleep(1)
+mouse.position = (744, 11)
+mouse.press(Button.left)
+mouse.release(Button.left)
+
+
+if __name__ == '__main__':
+    pass
