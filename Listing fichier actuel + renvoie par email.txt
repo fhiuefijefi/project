@@ -1,0 +1,41 @@
+#SCRIPT LISTING FICHIER DU BUREAU
+
+import os
+from os import system
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import socket
+
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+
+#print(os.listdir())
+
+#go = ['.idea', 'main.py', 'temp.py', 'venv']
+
+gi = ",".join(os.listdir())
+
+print(gi)
+
+email = "boumaza.ouassim@mail.fr"
+password = input('Le mdp de l"email stp : ')
+send_to = "boumaza.ouassim@gmail.com"
+subject = "Test 404"
+message = gi
+
+msg = MIMEMultipart()
+msg['From'] = email
+msg['To'] = send_to
+msg['Subject'] = subject
+
+msg.attach(MIMEText(message,'plain'))
+
+if __name__ == '__main__':
+
+    server = smtplib.SMTP('smtp.mail.fr', 587)
+    server.starttls()
+    server.login(email, password)
+    text = msg.as_string()
+    server.sendmail(email, send_to, message)
+    server.quit()

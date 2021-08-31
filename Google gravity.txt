@@ -1,0 +1,43 @@
+import pynput
+from time import sleep
+
+mouse = pynput.mouse.Controller()
+keyboard = pynput.keyboard.Controller()
+#
+mouse.position = (944, 84)
+mouse.press(pynput.mouse.Button.left)
+mouse.release(pynput.mouse.Button.left)
+sleep(0.5)
+mouse.position = (717, 54)
+mouse.press(pynput.mouse.Button.left)
+mouse.release(pynput.mouse.Button.left)
+sleep(1)
+#
+
+word = ('J','e',' ','s','u','i','s',' ','u','n',' ','r','o','b','o','t','.')
+
+for i in word:
+    keyboard.press(i)
+    keyboard.release(i)
+    sleep(0.05)
+
+#
+mouse.position = (86, 52)
+mouse.press(pynput.mouse.Button.left)
+mouse.release(pynput.mouse.Button.left)
+
+mouse.position = (677, 625)
+mouse.press(pynput.mouse.Button.left)
+sleep(3)
+mouse.press(pynput.mouse.Button.left)
+mouse.position = (1050, 273)
+mouse.press(pynput.mouse.Button.left)
+sleep(1)
+mouse.position = (185, 237)
+mouse.press(pynput.mouse.Button.left)
+sleep(1)
+mouse.position = (665, 212)
+sleep(1)
+mouse.press(pynput.mouse.Button.left)
+if __name__ == '__main__':
+    pass
